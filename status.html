@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exkursion – Status</title>
+  <link rel="stylesheet" href="../Corporate_Design/css/corporate-design.css">
+  <link rel="stylesheet" href="css/anmeldung.css">
+</head>
+<body>
+  <div data-include="header"></div>
+  <script defer src="../Corporate_Design/js/ui/include.js"></script>
+
+  <main class="page-wrapper">
+    <section class="status-hero">
+      <h1>Status deiner Anmeldung</h1>
+      <p>Gib deine Buchungsnummer ein oder nutze die Übersicht der letzten Aktivitäten.</p>
+      <form id="status-form" class="status-form">
+        <label>
+          Buchungsnummer
+          <input type="text" name="bookingId" placeholder="z. B. EX-2025-0012" required>
+        </label>
+        <button type="submit" class="btn primary">Status abrufen</button>
+      </form>
+      <p class="status-form__hint">Du findest die Buchungsnummer in deiner Anmeldebestätigung.</p>
+    </section>
+
+    <section class="status-result" hidden data-status-result>
+      <h2>Aktueller Stand</h2>
+      <dl class="status-list">
+        <div>
+          <dt>Status</dt>
+          <dd data-status-label>–</dd>
+        </div>
+        <div>
+          <dt>Exkursion</dt>
+          <dd data-status-trip>–</dd>
+        </div>
+        <div>
+          <dt>Datum</dt>
+          <dd data-status-date>–</dd>
+        </div>
+        <div>
+          <dt>Hinweise</dt>
+          <dd data-status-notes>–</dd>
+        </div>
+      </dl>
+      <div class="status-actions">
+        <button class="btn secondary" data-cancel>Teilnahme stornieren</button>
+        <button class="btn ghost" data-edit>Anfrage anpassen</button>
+      </div>
+      <p class="status-note">Hinweis: Stornierungen sind bis 7 Tage vor Beginn möglich. Danach bitte direkt an die Organisation wenden.</p>
+    </section>
+
+    <section class="status-history">
+      <h2>Meine letzten Aktionen</h2>
+      <ul class="history-list" data-history>
+        <li>Noch keine Anmeldungen vorhanden.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <p>Stand: Prototyp – Daten werden noch nicht final gespeichert.</p>
+  </footer>
+
+  <script src="js/anmeldung.js"></script>
+</body>
+</html>

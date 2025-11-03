@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exkursion – Anmeldung</title>
+  <link rel="stylesheet" href="../Corporate_Design/css/corporate-design.css">
+  <link rel="stylesheet" href="css/anmeldung.css">
+</head>
+<body>
+  <div data-include="header"></div>
+  <script defer src="../Corporate_Design/js/ui/include.js"></script>
+
+  <main class="page-wrapper">
+    <header class="form-header">
+      <h1>Anmeldung zur Exkursion</h1>
+      <p>Fülle die folgenden Schritte aus. Pflichtfelder sind mit * markiert.</p>
+      <div class="progress" aria-hidden="true">
+        <span class="progress__bar" data-progress></span>
+      </div>
+    </header>
+
+    <form id="exkursion-form" novalidate>
+      <section class="form-step active" data-step="1">
+        <h2>Schritt 1: Auswahl & Stammdaten</h2>
+        <label>
+          Exkursion *
+          <select name="tripId" required>
+            <option value="">Bitte auswählen</option>
+          </select>
+        </label>
+        <label>
+          Vor- und Nachname *
+          <input type="text" name="fullName" required>
+        </label>
+        <label>
+          Matrikelnummer *
+          <input type="text" name="matriculation" minlength="6" maxlength="8" required>
+        </label>
+        <label>
+          Kurs *
+          <input type="text" name="course" placeholder="z. B. WI24A3" required>
+        </label>
+      </section>
+
+      <section class="form-step" data-step="2">
+        <h2>Schritt 2: Kontakt & Notfall</h2>
+        <label>
+          DHBW E-Mail *
+          <input type="email" name="email" required>
+        </label>
+        <label>
+          Telefonnummer *
+          <input type="tel" name="phone" required>
+        </label>
+        <label>
+          Notfallkontakt
+          <input type="text" name="emergencyContact">
+        </label>
+        <label>
+          Notfallnummer
+          <input type="tel" name="emergencyPhone" >
+        </label>
+      </section>
+
+      <section class="form-step" data-step="3">
+        <h2>Schritt 3: Hinweise & Bestätigung</h2>
+        <label>
+          Hinweise (Allergien, Barrierefreiheit, Sonstiges)
+          <textarea name="notes" rows="4"></textarea>
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="privacy" required>
+          Ich bestätige die Datenschutzhinweise und Teilnahmebedingungen. *
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="mailOptIn">
+          Ich möchte eine Bestätigung per E-Mail erhalten.
+        </label>
+      </section>
+
+      <div class="form-actions">
+        <button type="button" class="btn secondary" data-prev disabled>Zurück</button>
+        <button type="button" class="btn primary" data-next>Weiter</button>
+        <button type="submit" class="btn primary" data-submit hidden>Anmeldung abschicken</button>
+      </div>
+    </form>
+
+    <aside class="form-aside">
+      <h2>Informationen zur Teilnahme</h2>
+      <ul>
+        <li>Plätze werden nach Eingangsdatum vergeben.</li>
+        <li>Bei Wartelistenstatus informieren wir dich per E-Mail.</li>
+        <li>Stornierungen sind bis 7 Tage vor Beginn möglich.</li>
+      </ul>
+    </aside>
+  </main>
+
+  <footer class="page-footer">
+    <p>Stand: Prototyp – Daten werden noch nicht final gespeichert.</p>
+  </footer>
+
+  <script src="js/anmeldung.js"></script>
+</body>
+</html>
